@@ -1,0 +1,83 @@
+{% extends '/bezoeker/bezoeker.html.twig' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Training Factory</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/sporten">Les Aanbod</a></li>
+                    <li><a href="/regels">Gedrags Regels</a></li>
+                    <li class="active"><a href="/contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register"><span class=""></span> Registreren</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container text-center">
+        <h3>Contact</h3><br>
+            <div class="row">
+                <div class="col-sm-2 text-start">
+                    <p> Openings Tijden</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Ma 7:00 - 22:00</li>
+                        <li class="list-group-item">Di 7:00 - 22:00</li>
+                        <li class="list-group-item">Wo 7:00 - 22:00</li>
+                        <li class="list-group-item">Do 7:00 - 22:00</li>
+                        <li class="list-group-item">Vr 7:00 - 22:00</li>
+                        <li class="list-group-item">Za 8:00 - 20:00</li>
+                        <li class="list-group-item">Zo 8:00 - 20:00</li>
+                    </ul>
+                </div>
+                <div class="col-sm-7">
+                    <p>Bij Training Factory Den Haag staan we altijd klaar om je te helpen en je vragen te beantwoorden.
+                        We willen ervoor zorgen dat je de best mogelijke ervaring hebt, zowel voor als tijdens je bezoek aan onze sportschool.
+                        Daarom zijn we tijdens onze openingsuren bereikbaar via zowel telefoon als e-mail.
+                        <br><br>
+                        Als je vragen hebt over onze trainingsprogramma's, lidmaatschapsopties of andere gerelateerde onderwerpen, kun je ons telefonisch bereiken. Onze toegewijde medewerkers zullen met plezier je vragen beantwoorden en je voorzien van de nodige informatie. Of het nu gaat om het plannen van je eerste trainingssessie, het verkrijgen van advies over onze verschillende lessen of het bespreken van eventuele zorgen, we staan ​​klaar om je te helpen.
+                        <br><br>
+                        Daarnaast begrijpen we dat je misschien niet altijd in staat bent om te bellen. Daarom hebben we ook een e-mailadres waar je ons kunt bereiken. Stuur ons gerust een e-mail met je vragen, opmerkingen of suggesties. We streven ernaar om zo snel mogelijk te reageren, zodat je de informatie krijgt die je nodig hebt.
+                        <br><br>
+                        Of je nu belt of een e-mail stuurt, we willen ervoor zorgen dat je te allen tijde een goede communicatielijn met ons hebt. We geloven in het belang van persoonlijk contact en streven ernaar om je zo goed mogelijk van dienst te zijn.
+                        <br><br>
+                        Dus aarzel niet om contact met ons op te nemen tijdens onze openingsuren. We kijken ernaar uit om je te helpen en je te verwelkomen bij Training Factory Den Haag. Samen werken we aan het bereiken van jouw sportdoelen en het creëren van een positieve en motiverende sportomgeving.
+                        <br><br><br><br>
+                        Telefoonnummer: <a href="tel:+31 6 1234 5678">+31 6 1234 5678</a>
+                        <br>
+                        E-mailadres: <a href="mailto:info@trainingfactory.nl">info@trainingfactory.nl</a>
+                        <br><br><br><br>
+
+                        We kijken uit naar je contact en staan klaar om je te ondersteunen op je fitnessreis!
+                    </p>
+
+                </div>
+                <div class="col-sm-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.5526478963257!2d5.196165176945375!3d51.94211287885319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66065109627c1%3A0xc3f152cf892fad1b!2sTraining%20Factory%20Culemborg%20(TFC)!5e0!3m2!1snl!2snl!4v1685702388764!5m2!1snl!2snl" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p style="display: flex;text-align: start;justify-content: center;">
+                        <br>Training Factory Den Haag<br>
+                        Sportlaan 45<br>
+                        2516 CG Den Haag</p>
+                </div>
+            </div>
+        <br>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,50 @@
+{% extends '/bezoeker/bezoeker.html.twig' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Training Factory</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/sporten">Les Aanbod</a></li>
+                    <li><a href="/regels">Gedrags Regels</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register"><span class=""></span> Registreren</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container text-center">
+        <h3>Les Aanbod</h3><br>
+
+
+            {% for training in trainings %}
+                    <div class="col-sm-4">
+                        <img src="{{ asset(training.image) }}" class="img-responsive" style="width:100%" alt="Image">
+                        <p>{{ training.name }}</p>
+                        <p>{{ training.description }}</p>
+                    </div>
+
+            {% endfor %}
+
+    </div>
+
+{% endblock %}
+

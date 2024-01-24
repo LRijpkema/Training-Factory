@@ -1,0 +1,25 @@
+{% extends 'bezoeker/bezoeker.html.twig' %}
+
+{% block title %}Lessen Overzicht{% endblock %}
+
+{% block navbar %}
+ 
+
+{% endblock %}
+
+{% block content %}
+
+    <h3>Les ID: {{ lesson.id }}</h3>
+    <h3>Sport: {{ lesson.training.name }}</h3>
+    <h3>Locatie: {{ lesson.location }}</h3>
+    <h3>Datum: {{ lesson.date ? lesson.date|date('Y-m-d') : '' }}</h3>
+    <h3>Tijd: {{ lesson.Time ? lesson.Time|date('H:i') : '' }}</h3>
+    <br><br>
+    <h3>Deelnemers:</h3>
+    {% for registration in registrations %}
+        {% if registration.lesson.id == lesson.id %}
+            <p> {{ registration.member.firstname }} {{ registration.member.lastname }}</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

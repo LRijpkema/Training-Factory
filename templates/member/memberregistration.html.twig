@@ -1,0 +1,22 @@
+{% extends 'bezoeker/bezoeker.html.twig' %}
+
+{% block title %}Lessen Overzicht{% endblock %}
+
+{% block navbar %}
+
+
+{% endblock %}
+
+{% block content %}
+    <h1>Inschrijven</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.lesson) }}
+    {{ form_row(form.member) }}
+    {{ form_row(form.payment) }}
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

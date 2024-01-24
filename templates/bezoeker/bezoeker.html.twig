@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} {{ title }} | Training Factory {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .carousel-inner img {
+            object-fit: cover;
+            width: 100%; /* Set width to 100% */
+            margin: auto;
+            min-height:200px;
+
+        }
+
+
+        .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+            display: block;
+            max-width: 100%;
+            height: 40rem;
+            object-fit: cover;
+        }
+
+        .carousel-inner{
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            max-height: 40rem;
+        }
+
+
+
+
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+{% block navbar %}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Training Factory</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/sporten">Les Aanbod</a></li>
+                <li><a href="/regels">Gedrags Regels</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register"><span class=""></span> Registreren</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="{{ ('imgs/banner1.jpg') }}" alt="Image" style="">
+            <div class="carousel-caption">
+                <h3>HIIT</h3>
+                <p>Verbeter je uithoudings vermogen en kracht</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{{ asset('imgs/banner2.jpg') }}" alt="Image">
+            <div class="carousel-caption">
+                <h3>Kickboksen</h3>
+                <p>Leer om te kickboksen</p>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="container ">
+    <h3 class="text-center">Over Ons</h3><br>
+    <div class="row">
+        <div class="col-sm-8 text-start">
+            <p>Ons doel is om vechtsporten bekend te maken bij een breder publiek en de drempel te verlagen voor iedereen die graag eens wil ervaren hoe het is om op een gecontroleerde manier te sparren, zowel met bekenden als met onbekenden.
+                <br><br>
+                We begrijpen dat er rondom kickboksgala's soms een negatieve sfeer kan hangen, waardoor mensen terughoudend zijn om zich aan te melden bij een sportschool die zich richt op deze sporten. Daarom biedt Training Factory Den Haag een veilige en positieve omgeving waarin je op een intensieve manier aan je gezondheid kunt werken, zonder je zorgen te maken over negatieve invloeden.
+                <br><br>
+                Bij ons staat jouw welzijn voorop. Onze ervaren trainers begeleiden je met expertise en passie, zodat je het beste uit jezelf kunt halen. Of je nu een beginner bent die zijn of haar eerste stappen zet in de vechtsportwereld, of een ervaren beoefenaar die zijn vaardigheden wil aanscherpen, bij Training Factory Den Haag is er voor ieder wat wils.
+                <br><br>
+                We kijken ernaar uit om jou te verwelkomen in onze gloednieuwe sportinstelling. Ontdek de opwindende wereld van vechtsporten, verbeter je conditie, versterk je zelfvertrouwen en maak nieuwe vriendschappen. Samen creëren we een positieve en motiverende omgeving waarin iedereen kan groeien en zijn persoonlijke doelen kan bereiken.
+                <br><br>
+                Registreer je vandaag nog en word onderdeel van de Training Factory Den Haag-familie.
+                <br><br>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <img src="{{ asset('imgs/aboutus.jpg') }}" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+    </div>
+</div><br>
+
+<div class="container text-center">
+    <h3>What We Do</h3><br>
+    <div class="row">
+
+        {% set counter = 0 %}
+
+        {% for training in trainings %}
+            {% if counter < 3 %}
+                <div class="col-sm-4">
+                    <img src="{{ asset(training.image) }}" class="img-responsive" style="width:100%" alt="Image">
+                    <p>{{ training.name }}</p>
+                </div>
+            {% endif %}
+
+            {% set counter = counter + 1 %}
+
+        {% endfor %}
+
+    </div>
+</div><br>
+
+{% endblock %}
+
+
+{% block footer %}
+    <section class="">
+        <!-- Footer -->
+        <footer class="bg-secondary text-white justify-content-center">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Footer Content</h5>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+                            aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-8 mb-8 mb-md-0 text-center">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="/" class="text-white">Home</a>
+                            </li>
+                            <li>
+                                <a href="/sporten" class="text-white">Les Aanbod</a>
+                            </li>
+                            <li>
+                                <a href="/regels" class="text-white">Gedrags Regels</a>
+                            </li>
+                            <li>
+                                <a href="/contact" class="text-white">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3">
+                <h5>© 2023 Copyright: Buddies</h5>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </section>
+    </footer>
+{% endblock %}
+
+</body>
+</html>

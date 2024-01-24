@@ -1,0 +1,82 @@
+{% extends 'bezoeker/bezoeker.html.twig' %}
+
+{% block title %}Lessen Overzicht{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Training Factory</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/trainer">Overzicht</a></li>
+                    <li><a href="{{ path('app_lesson_new') }}">Les Aanmaken</a></li>
+
+                    <li><a href="/trainerprofiel">Profiel</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Log uit</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <h1>Welkom Trainer</h1>
+
+    <h2 style=" display: flex; justify-content: center; ">Lessen Overzicht</h2>
+
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sport</th>
+                <th>Trainer</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Max_persons</th>
+                <th>Deelnemers lijst</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+            <tr>
+                <td>{{ lesson.id }}</td>
+                <td>{{ lesson.training.name}}</td>
+                <td>{{ lesson.trainer.firstname}} {{ lesson.trainer.lastname}}</td>
+                <td>{{ lesson.Time ? lesson.Time|date('H:i') : '' }}</td>
+                <td>{{ lesson.date ? lesson.date|date('Y-m-d') : '' }}</td>
+                <td>{{ lesson.location }}</td>
+                <td>{{ lesson.maxPersons }}</td>
+                <td>
+                    <a href="{{ path('app_trainerdeelnemers', {'id': lesson.id}) }}"><button type="button" class="btn btn-success">Deelnemers</button></a>
+                </td>
+                <td style="
+                    display: flex;
+                    justify-content: space-between;
+                    width: 30rem;
+                ">
+                    <a href="{{ path('app_lesson_show', {'id': lesson.id}) }}"><button type="button" class="btn btn-success">Show</button></a>
+                    <a href="{{ path('app_lesson_edit', {'id': lesson.id}) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                    {{ include('trainer/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

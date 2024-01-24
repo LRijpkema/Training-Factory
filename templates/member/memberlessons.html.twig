@@ -1,0 +1,71 @@
+{% extends 'bezoeker/bezoeker.html.twig' %}
+
+{% block title %}Lessen Overzicht{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Training Factory</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/member">Home</a></li>
+                    <li class="active"><a href="#">Lessen</a></li>
+
+                    <li><a href="/memberprofiel">Profiel</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Log uit</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <h1>Lessen overzicht</h1>
+
+    <table class="table" >
+        <thead>
+        <tr>
+            <th>Sport</th>
+            <th>Trainer</th>
+            <th>Tijd</th>
+            <th>Datum</th>
+            <th>Locatie</th>
+            <th>Inschrijven</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+            <tr>
+                <td>{{ lesson.training.name}}</td>
+                <td>{{ lesson.trainer.firstname}} {{ lesson.trainer.lastname}}</td>
+                <td>{{ lesson.Time ? lesson.Time|date('H:i') : '' }}</td>
+                <td>{{ lesson.date ? lesson.date|date('Y-m-d') : '' }}</td>
+                <td>{{ lesson.location }}</td>
+                <td style="
+                    display: flex;
+                    justify-content: space-between;
+                    width: 30rem;
+                ">
+                    <a href="{{ path('app_memberregistration', {'id': lesson.id}) }}"><button type="button" class="btn btn-success">Inschrijven</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

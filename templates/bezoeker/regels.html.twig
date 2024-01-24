@@ -1,0 +1,57 @@
+{% extends '/bezoeker/bezoeker.html.twig' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Training Factory</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/sporten">Les Aanbod</a></li>
+                    <li class="active"><a href="/regels">Gedrags Regels</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register"><span class=""></span> Registreren</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container text-center">
+        <h3>Gedrags Regels</h3><br>
+        <p>Bij Training Factory Den Haag streven we ernaar om een veilige, respectvolle en positieve omgeving te creëren waarin iedereen kan groeien en zijn of haar doelen kan bereiken.
+            We vragen al onze leden om deze gedragsregels te respecteren en te volgen, zodat we samen kunnen werken aan een geweldige sportervaring voor iedereen.</p>
+<br><br>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Respecteer elkaar: Behandel alle medesporters, trainers en personeelsleden met respect en vriendelijkheid. We waarderen diversiteit en streven naar een inclusieve omgeving waar iedereen zich welkom voelt.</li>
+            <li class="list-group-item">Volg de instructies van de trainers op: Luister aandachtig naar de aanwijzingen en instructies van onze ervaren trainers. Ze zijn er om je te begeleiden en te helpen het beste uit jezelf te halen.</li>
+            <li class="list-group-item">Houd je aan de veiligheidsvoorschriften: Volg altijd de veiligheidsvoorschriften en richtlijnen van de sportschool. Dit omvat het juiste gebruik van apparatuur, het dragen van geschikte sportkleding en het schoonhouden van de trainingsruimte.</li>
+            <li class="list-group-item">Wees verantwoordelijk voor je eigen welzijn: Luister naar je lichaam en overschrijd je eigen grenzen niet. Als je je niet lekker voelt of een blessure hebt, meld dit dan aan de trainer.</li>
+            <li class="list-group-item">Respecteer de trainingsruimte: Zorg ervoor dat je de trainingsruimte netjes houdt. Ruim na gebruik je spullen op en houd de omgeving schoon.</li>
+            <li class="list-group-item">Kom op tijd voor de lessen: Wees op tijd aanwezig voor de lessen, zodat je voldoende tijd hebt om jezelf voor te bereiden en op te warmen. Dit minimaliseert onderbrekingen en zorgt voor een soepele start van de training.</li>
+            <li class="list-group-item">Gebruik alleen toegestane apparatuur: Maak alleen gebruik van de apparatuur en materialen die zijn aangewezen voor jouw specifieke training. Respecteer het gebruik van anderen en de specifieke regels voor elk type training.</li>
+            <li class="list-group-item">Wees een teamspeler: Moedig anderen aan en werk samen met je medesporters. We streven naar een ondersteunende gemeenschap waarin we elkaar inspireren en motiveren om onze doelen te bereiken.</li>
+            <li class="list-group-item">Respecteer de privacy van anderen: Respecteer de privacy en persoonlijke ruimte van andere sportschoolleden. Vermijd ongewenst gedrag, zoals ongevraagd advies geven of het filmen van anderen zonder toestemming.</li>
+            <li class="list-group-item">Blijf positief en geniet: Kom naar de sportschool met een positieve instelling en geniet van je training. We geloven dat sporten niet alleen goed is voor je lichaam, maar ook voor je geest.</li>
+        </ol>
+        <br><br>
+        <p>Bedankt voor je medewerking!</p>
+        <br><br>
+    </div>
+
+{% endblock %}
+
